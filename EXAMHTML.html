@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="kn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXAMHTML></HTML></title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />"
+    <style>
+        /* Reset default browser styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+       
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('background-pattern.png') repeat, linear-gradient(to bottom, #010f0e, #570303);
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(to right, #000504, #650303);
+            color: white;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease-in-out;
+        }
+
+        header img {
+            border-radius: 50%;
+            animation: subtleZoom 8s ease-in-out infinite, colorTransition 8s ease-in-out infinite;
+            max-width: 150px;
+            width: 100%;
+            height: auto;
+        }
+
+        header .info {
+            flex: 1;
+            margin-left: 20px;
+            min-width: 200px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin-bottom: 5px;
+            font-size: 1.2em;
+        }
+
+        /* Animations */
+        @keyframes subtleZoom {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes colorTransition {
+            0% {
+                filter: brightness(100%);
+            }
+
+            50% {
+                filter: brightness(110%);
+            }
+
+            100% {
+                filter: brightness(100%);
+            }
+        }
+
+        /* Navigation Styling */
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul li {
+            flex: 1;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            background-color: #111;
+            transform: translateY(-2px);
+        }
+
+        /* Container Styling */
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .section:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .section h2 {
+            color: #080000;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .section hr {
+            border: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        /* Products Grid Styling */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-item {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #030000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        /* Contact Info Styling */
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .button{
+            background-color: #f50115;
+            margin-right: 20px;
+            padding: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header .info {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                flex: none;
+            }
+        }
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header .info {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                flex: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="Phoum.jpg" alt="Company Logo">
+        <div class="info">
+            <h1>CarbonFiber Accessories<p style="font-size: 20px; margin: 0;"> By Rattanak Phoum </p></h1>
+            <p> Location: Phnom-penh st300 BKK2<br> Phone number: 092332342</p>
+        </div>
+    </header>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2> About Us</h2>
+            <hr>
+            <p><i class="fa-solid fa-hand"></i> Welcome to CarbonFiber Accessories, where style meets durability. We specialize in premium carbon fiber phone cases designed to protect your device while adding a touch of elegance. Our mission is to provide high-quality, lightweight, and sleek products that enhance your everyday experience. At CarbonFiber Accessories, we blend innovation and craftsmanship to bring you accessories that stand out in both performance and design.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <h2>Our Services</h2>
+            <ul>
+                <li><i class="fa-brands fa-shopify"></i>: Supply of high-quality </li>
+                <li><i class="fa-solid fa-thumbs-up"></i>: Recommand a beautiful products</li>
+                <li><i class="fa-solid fa-truck"></i>: Free delivery in Phnom-penh</li>
+                <li><i class="fa-solid fa-truck-fast"></i>: Pre-order for 1-2week.</li>
+                <li><i class="fa-solid fa-envelope"></i>: For More information place contact our social media</li>
+            </ul>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <h2>Our Products</h2>
+            <div class="products-grid">
+                <div class="product-item">
+                    <h3><img src="Airpod.jpg"alt="" width="230px" height="220px"></h3>
+                    <p>Airpod case carbonfiber forged red</p>
+                    <h3>$ 20 </h3>
+                    <button class="button">
+                        <span><i class="fa-solid fa-bag-shopping"></i> Buy Now</span>
+                    <button class="button">
+                        <span><i class="fa-solid fa-cart-shopping"></i> Add to cart</span>
+                </div>
+                <div class="product-item">
+                    <h3><img src="Iphone.jpg"alt="" width="235px" height="220px"></h3>
+                    <p>Iphone case carbonfiber forged red .</p>
+                    <h3>$ 28 </h3>
+                    <button class="button">
+                        <span><i class="fa-solid fa-bag-shopping"></i> Buy Now</span>
+                    <button class="button">
+                        <span><i class="fa-solid fa-cart-shopping"></i> Add to cart</span>
+                </div>
+                <div class="product-item">
+                    <h3><img src="Gold Forged.jpg"alt="" width="235px" height="220px"></h3>
+                    <p>Iphone case carbonfiber forged Gold </p>
+                    <h3>$ 28 </h3>
+                    <button class="button">
+                        <span><i class="fa-solid fa-bag-shopping"></i> Buy Now</span>
+                    <button class="button">
+                        <span><i class="fa-solid fa-cart-shopping"></i> Add to cart </span>
+                        
+                </div>
+                <div class="product-item">
+                    <h3><img src="Airpod gold forged.jpg"alt="" width="235px" height="220px"></h3>
+                    <p>Airpod case carbonfiber forged Gold </p>
+                    <h3>$ 20 </h3>
+                    <button class="button">
+                        <span><i class="fa-solid fa-bag-shopping"></i> Buy Now</span>
+                    <button class="button">
+                        <span><i class="fa-solid fa-cart-shopping"></i> Add to cart</span>
+                </div>
+            </div>
+        </product-img>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>For more information about our products and services, Please get in touch with us By Click The Link Icon.</p>
+            <ul class="contact-info">
+                <li><strong><a href="https://www.google.com/maps/@11.5521955,104.9163422,19.83z?entry=ttu&g_ep=EgoyMDI1MDExMC4wIKXMDSoASAFQAw%3D%3D"><i class="fa-solid fa-location-dot fa-xl" style="color: #04d8e7;"></i></a> Address:</strong> st 300 BKK2, Phnom-penh, cambodia.></li>
+                <li><strong><a href="https://www.instagram.com/carbon_fiber_accessories_?igsh=MzZmNHdhbTB6Yjhw&utm_source=qr"><i class="fa-brands fa-instagram fa-xl" style="color: #f20707;"></i></a> Instagram:</strong> CarbonFiber Accessories.</li>            
+                <li><strong><a href="https://www.facebook.com/share/1DL11kZuYE/?mibextid=wwXIfr"><i class="fa-brands fa-square-facebook fa-xl" style="color: #3705cc;"></i></a>  Facebook page:</strong> CarbonFiber Accessories.</li>
+                <li><strong><a href="tel:092332342"><i class="fa-solid fa-phone fa-xl" style="color: #32da10;"></i> Phone:</strong> +885 92 332 342</li>
+            </ul>
+        </section id>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p><i class="fa-solid fa-heart"></i> Thanks you guys for come and visit My Online-Shop <i class="fa-solid fa-heart"></i>
+    </footer>
+</body>
+</html>
